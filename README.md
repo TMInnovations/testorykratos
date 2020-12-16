@@ -1,6 +1,11 @@
 # Test of ory/kratos sdk for javascript/typescript/angular
 
+## Todos
+
+- Try to initialize registration request in popup window with window.open and watch at cookie and flow
+
 ## How you can run the project (Feel free to modify this section as I didn't verify it yet)
+
 - Be sure to have the @angular/cli installed globally via npm (if you need to, download and install nodejs in advance to use npm)
 - `git clone` the repository to your machine
 - `cd` into it
@@ -10,6 +15,7 @@
 - open your browser at `http://localhost:4200`
 
 ## How I set up the project:
+
 - Via `npm i -g @angular/cli` globally
 - Install docker on a windows machine
 - Started an angular project with ng new
@@ -19,4 +25,5 @@
 - Defined the basepath in the environment file to point at the api.
 
 # Contribution very appreciated
+
 Please help me and the ory developers to test and discover difficulties with the typescript sdk for ory/kratos
