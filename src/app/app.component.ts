@@ -10,13 +10,26 @@ export class AppComponent {
   constructor(private pa: PublicApi) {}
 
   private headers: RequestInit = {
+    method: 'GET',
+    headers: { credentials: 'include' },
+    redirect: 'follow',
     credentials: 'include',
   };
 
-  callRegistrationFlow() {
+  callRegistrationFlowViaSDK() {
     this.pa
       .initializeSelfServiceRegistrationViaBrowserFlow(this.headers)
-      .then(r => console.log(r));
+      .then(r => console.log(r))
+      .catch(f => console.log(f));
+  }
+
+  callRegistrationFlowViaFetch() {
+    fetch(
+      'http://localhost:4433/self-service/registration/browser',
+      this.headers
+    )
+      .then(r => console.log(r))
+      .catch(f => console.log(f));
   }
 
   testApiAvail() {
