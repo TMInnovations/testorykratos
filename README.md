@@ -1,6 +1,6 @@
 # Test of ory/kratos sdk for javascript/typescript/angular
 
-## How you can run the project (Feel free to modify this section as I did'nt verify it yet)
+## How you can run the project (Feel free to modify this section as I didn't verify it yet)
 - Be sure to have the @angular/cli installed globally via npm (if you need to, download and install nodejs in advance to use npm)
 - `git clone` the repository to your machine
 - `cd` into it
