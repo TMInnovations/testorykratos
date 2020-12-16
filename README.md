@@ -1,27 +1,22 @@
-# TestOryKratos
+# Test of ory/kratos sdk for javascript/typescript frontends (here angular is used)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+## How you can run the project (Feel free to modify this section as I did'nt verify it yet)
+- Be sure to have the @angular/cli installed globally via npm (if you need to, download and install nodejs in advance to use npm)
+- `git clone` the repository to your machine
+- `cd` into it
+- run `npm i`
+- run `ng build --watch`
+- run `docker-compose -f docker/docker-compose.yml up -d` to start up the api server (if not successfull, try `docker-compose -f docker/docker-compose.yml up` and watch out for errors)
+- open your browser at `http://localhost:4200`
 
-## Development server
+## How I set up the project:
+- Via npm install @angular/cli globally
+- Install docker on a windows machine
+- Started an angular project with ng new
+- Set up the ./docker/docker-compose.yml file and corresponding config files to be able to easily startup the ory/kratos api server.
+- Installed the ory/kratos sdk (https://www.npmjs.com/package/@oryd/kratos-client)
+- Provided the PublicApi Class inside the app.module.ts and wrote a litte factory function to be have only one instance of it in the whole project and to be able to inject it reg. to dependency injection.
+- Defined the basepath in the environment file to point at the api.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Contribution very appreciated
+Please help me and the ory developers to test and discover difficulties with the typescript sdk for ory/kratos
