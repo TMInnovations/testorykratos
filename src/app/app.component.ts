@@ -9,11 +9,13 @@ import { PublicApi } from '@oryd/kratos-client';
 export class AppComponent {
   constructor(private pa: PublicApi) {}
 
+  private headers: RequestInit = {
+    credentials: 'include',
+  };
+
   callRegistrationFlow() {
     this.pa
-      .initializeSelfServiceRegistrationViaBrowserFlow({
-        credentials: 'include',
-      })
+      .initializeSelfServiceRegistrationViaBrowserFlow(this.headers)
       .then(r => console.log(r));
   }
 

@@ -64,12 +64,13 @@ __webpack_require__.r(__webpack_exports__);
 class AppComponent {
     constructor(pa) {
         this.pa = pa;
+        this.headers = {
+            credentials: 'include',
+        };
     }
     callRegistrationFlow() {
         this.pa
-            .initializeSelfServiceRegistrationViaBrowserFlow({
-            credentials: 'include',
-        })
+            .initializeSelfServiceRegistrationViaBrowserFlow(this.headers)
             .then(r => console.log(r));
     }
     testApiAvail() {
