@@ -10,7 +10,7 @@
 - open your browser at `http://localhost:4200`
 
 ## How I set up the project:
-- Via npm install @angular/cli globally
+- Via `npm i -g @angular/cli` globally
 - Install docker on a windows machine
 - Started an angular project with ng new
 - Set up the ./docker/docker-compose.yml file and corresponding config files to be able to easily startup the ory/kratos api server.
