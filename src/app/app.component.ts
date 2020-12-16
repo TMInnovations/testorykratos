@@ -10,7 +10,11 @@ export class AppComponent {
   constructor(private pa: PublicApi) {}
 
   callRegistrationFlow() {
-    this.pa.initializeSelfServiceRegistrationViaBrowserFlow();
+    this.pa
+      .initializeSelfServiceRegistrationViaBrowserFlow({
+        credentials: 'include',
+      })
+      .then(r => console.log(r));
   }
 
   testApiAvail() {

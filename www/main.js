@@ -22,6 +22,8 @@ module.exports = __webpack_require__(/*! C:\Users\tm\Documents\1_Projects\2020\0
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
+/* harmony import */ var zone_js_dist_zone_error__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! zone.js/dist/zone-error */ "+Vou");
+/* harmony import */ var zone_js_dist_zone_error__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_zone_error__WEBPACK_IMPORTED_MODULE_0__);
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
@@ -36,7 +38,7 @@ const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+ // Included with Angular CLI.
 
 
 /***/ }),
@@ -64,7 +66,11 @@ class AppComponent {
         this.pa = pa;
     }
     callRegistrationFlow() {
-        this.pa.initializeSelfServiceRegistrationViaBrowserFlow();
+        this.pa
+            .initializeSelfServiceRegistrationViaBrowserFlow({
+            credentials: 'include',
+        })
+            .then(r => console.log(r));
     }
     testApiAvail() {
         // https://www.ory.sh/kratos/docs/reference/api#check-alive-status
